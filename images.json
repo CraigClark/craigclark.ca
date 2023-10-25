@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Image 1",
+    "fileMobilePortrait": "media/mp/1.jpg",
+    "fileMobileLandscape": "media/ml/1.jpg",
+    "fileTabletPortrait": "media/tp/1.jpg",
+    "fileTabletLandscape": "media/tl/1.jpg",
+    "fileDesktop": "media/default/1.jpg",
+    "fileDefault": "media/default/1.jpg",
+    "title": "Image 1",
+    "description": "This is the first image."
+  },
+  {
+    "title": "Image 2",
+    "fileMobilePortrait": "media/mp/2.jpg",
+    "fileMobileLandscape": "media/ml/2.jpg",
+    "fileTabletPortrait": "media/tp/2.jpg",
+    "fileTabletLandscape": "media/tl/2.jpg",
+    "fileDesktop": "media//2.jpg",
+    "fileDefault": "media/default/2.jpg",
+    "title": "Image 2",
+    "description": "This is the second image."
+  }
+]

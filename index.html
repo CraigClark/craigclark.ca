@@ -7,5 +7,100 @@
   </head>
   <body>
     <p>craigclark.ca</p>
+    <picture id="image-container">
+      <!-- Mobile Portrait -->
+      <source
+        id="source-mp"
+        srcset=""
+        media="(max-width: 767px) and (orientation: portrait)"
+      />
+
+      <!-- Tablet Portrait -->
+      <source
+        id="source-tp"
+        srcset=""
+        media="(min-width: 768px) and (max-width: 991px) and (orientation: portrait)"
+      />
+
+      <!-- Mobile Landscape -->
+      <source
+        id="source-ml"
+        srcset=""
+        media="(max-width: 767px) and (orientation: landscape)"
+      />
+
+      <!-- Tablet Landscape -->
+      <source
+        id="source-tl"
+        srcset=""
+        media="(min-width: 768px) and (max-width: 991px) and (orientation: landscape)"
+      />
+
+      <!-- Desktop -->
+      <source id="source-desktop" srcset="" media="(min-width: 992px)" />
+
+      <!-- Fallback for unsupported conditions -->
+      <img src="" alt="" />
+    </picture>
+    <button id="reload-button">Reload</button>
+
+    <script>
+      // Function to load and process the JSON data
+      function loadJsonData() {
+        fetch("images.json") // Replace with the correct path to your JSON file
+          .then((response) => response.json())
+          .then((data) => {
+            // Store the JSON data in a global variable
+            window.imageData = data;
+
+            // Initially load a random image
+            loadRandomImage();
+          })
+          .catch((error) => {
+            console.error("Error loading JSON data:", error);
+          });
+      }
+
+      // Function to load a random image
+      function loadRandomImage() {
+        if (!window.imageData) {
+          console.error("JSON data not loaded yet.");
+          return;
+        }
+
+        const randomIndex = Math.floor(Math.random() * window.imageData.length);
+        const randomImage = window.imageData[randomIndex];
+
+        // Update the srcset attributes for each source element based on media queries
+        document
+          .getElementById("source-mp")
+          .setAttribute("srcset", randomImage.fileMobilePortrait);
+        document
+          .getElementById("source-tp")
+          .setAttribute("srcset", randomImage.fileTabletPortrait);
+        document
+          .getElementById("source-ml")
+          .setAttribute("srcset", randomImage.fileMobileLandscape);
+        document
+          .getElementById("source-tl")
+          .setAttribute("srcset", randomImage.fileTabletLandscape);
+        document
+          .getElementById("source-desktop")
+          .setAttribute("srcset", randomImage.fileDesktop);
+
+        // Update the fallback <img> element
+        const imgElement = document.querySelector("#image-container img");
+        imgElement.setAttribute("src", randomImage.fileDefault);
+        imgElement.setAttribute("alt", randomImage.description);
+      }
+
+      // Add a click event listener to the "Reload" button
+      document
+        .getElementById("reload-button")
+        .addEventListener("click", loadRandomImage);
+
+      // Load JSON data initially
+      loadJsonData();
+    </script>
   </body>
 </html>
