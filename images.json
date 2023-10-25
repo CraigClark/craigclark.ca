@@ -7,7 +7,6 @@
     "fileTabletLandscape": "media/tl/1.jpg",
     "fileDesktop": "media/default/1.jpg",
     "fileDefault": "media/default/1.jpg",
-    "title": "Image 1",
     "description": "This is the first image."
   },
   {
@@ -16,9 +15,8 @@
     "fileMobileLandscape": "media/ml/2.jpg",
     "fileTabletPortrait": "media/tp/2.jpg",
     "fileTabletLandscape": "media/tl/2.jpg",
-    "fileDesktop": "media//2.jpg",
+    "fileDesktop": "media/default/2.jpg",
     "fileDefault": "media/default/2.jpg",
-    "title": "Image 2",
     "description": "This is the second image."
   }
 ]

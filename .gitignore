@@ -1,0 +1,6 @@
+# dev files
+.ddev/
+
+# kruft
+
+.DS_Store
