@@ -4,3 +4,10 @@
 # kruft
 
 .DS_Store
+
+
+# other prjects
+imm/*
+
+# media
+media/*
